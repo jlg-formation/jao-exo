@@ -1,21 +1,20 @@
-class Person {
+class Voiture {
     
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
+    constructor(marque, prix, vmax) {
+        this.marque = marque;
+        this.prix = prix;
+        this.vmax = vmax;
     }
 
-    talk() {
-        console.log('Hello! My name is %s and I am %d years old.', this.name, this.age);
+    start() {
+        console.log(`Vroum, Vroum, je suis une ${this.marque}...`);
     }
 }
 
-console.log('Person', Person);
-console.log('Person %O', Person);
+console.log('Voiture', Voiture);
+console.log('Voiture %O', Voiture);
 
-const alice = new Person('Alice', 23);
-alice.talk();
-const bob = new Person('Bob', 31);
-bob.talk();
-
-console.log('alice.talk is equals to bob.talk in memory ?', alice.talk === bob.talk);
+const ds4 = new Voiture('DS', 22000, 180);
+ds4.start();
+const megane = new Voiture('Renault', 15000, 150);
+megane.start();
