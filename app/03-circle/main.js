@@ -1,7 +1,7 @@
 function main() {
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < 400; i++) {
         setTimeout(() => {
-            const m = new Multiply(i, 3);
+            const m = new Multiply(i, 16);
             m.draw();
         }, 16 * i);
 
