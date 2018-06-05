@@ -1,20 +1,11 @@
-class Voiture {
-    
-    constructor(marque, prix, vmax) {
-        this.marque = marque;
-        this.prix = prix;
-        this.vmax = vmax;
-    }
+function makeCircle() {
+    const div = document.querySelector('div');
+    div.innerHTML = `
+<svg width="600" height="600">
+    <circle cx="300" cy="300" r="200" stroke="#000" stroke-width="2" fill="transparent" />
+</svg>
+    `;
 
-    start() {
-        console.log(`Vroum, Vroum, je suis une ${this.marque}...`);
-    }
 }
 
-console.log('Voiture', Voiture);
-console.log('Voiture %O', Voiture);
-
-const ds4 = new Voiture('DS', 22000, 180);
-ds4.start();
-const megane = new Voiture('Renault', 15000, 150);
-megane.start();
+makeCircle();
