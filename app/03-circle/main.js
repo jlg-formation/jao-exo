@@ -1,3 +1,5 @@
+const svgns = "http://www.w3.org/2000/svg";
+
 class Circle {
     constructor(radius) {
         this.radius = radius;
@@ -17,7 +19,6 @@ class Circle {
 
     setPoint(angle) {
         const a = - angle * 2 * Math.PI / 360;
-        const svgns = "http://www.w3.org/2000/svg";
         const svg = document.querySelector('svg');
         const point = document.createElementNS(svgns, 'circle');
         point.setAttribute('cx', this.cx + this.radius * Math.cos(a));
@@ -34,7 +35,6 @@ class Circle {
         const a1 = - angle1 * 2 * Math.PI / 360;
         const a2 = - angle2 * 2 * Math.PI / 360;
 
-        const svgns = "http://www.w3.org/2000/svg";
         const svg = document.querySelector('svg');
         const line = document.createElementNS(svgns, 'line');
         line.setAttribute('x1', this.cx + this.radius * Math.cos(a1));
@@ -42,7 +42,7 @@ class Circle {
         line.setAttribute('x2', this.cx + this.radius * Math.cos(a2));
         line.setAttribute('y2', this.cy + this.radius * Math.sin(a2));
         line.setAttribute('stroke', '#000');
-        line.setAttribute('stroke-width', '2');
+        line.setAttribute('stroke-width', '1');
 
         svg.appendChild(line);
     }
