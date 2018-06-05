@@ -16,12 +16,13 @@ class Circle {
     }
 
     setPoint(angle) {
+        const a = angle * 2 * Math.PI / 360;
         const svgns = "http://www.w3.org/2000/svg";
         const svg = document.querySelector('svg');
         const point = document.createElementNS(svgns, 'circle');
-        point.setAttribute('cx', this.cx);
-        point.setAttribute('cy', this.cy);
-        point.setAttribute('r', 10);
+        point.setAttribute('cx', this.cx + this.radius * Math.cos(a));
+        point.setAttribute('cy', this.cy - this.radius * Math.sin(a));
+        point.setAttribute('r', 3);
         point.setAttribute('fill', '#000');
         point.setAttribute('stroke', '#000');
         point.setAttribute('stroke-width', '2');
@@ -33,7 +34,9 @@ class Circle {
 function main() {
     const c = new Circle(200);
     c.draw();
-    c.setPoint(10);
+    c.setPoint(30);
+    c.setPoint(60);
+    c.setPoint(90);
 }
 
 main();
