@@ -26,7 +26,7 @@ class Circle {
         point.setAttribute('r', 3);
         point.setAttribute('fill', '#000');
         point.setAttribute('stroke', '#000');
-        point.setAttribute('stroke-width', '2');
+        point.setAttribute('stroke-width', '0.5');
         point.setAttribute('id', `point_${angle}`);
 
         svg.appendChild(point);
