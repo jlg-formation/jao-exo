@@ -8,4 +8,8 @@ function makeCircle() {
 
 }
 
-makeCircle();
+function main() {
+    makeCircle();
+}
+
+main();
