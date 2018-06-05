@@ -33,11 +33,9 @@ class Circle {
     }
 
     removePoint(angle) {
-        console.log('removePoint');
-        const toBeRemoved = document.querySelector(`#point_${angle}`);
-        if (toBeRemoved) {
-            toBeRemoved.outerHTML = '';
-        }
+        try {
+            document.querySelector(`#point_${angle}`).outerHTML = '';
+        } catch (e) {}
     }
 
     setLine(angle1, angle2) {
@@ -66,6 +64,7 @@ function main() {
     c.setPoint(270);
     c.setLine(30, 90);
     setTimeout(() => {
+        c.removePoint(61);
         c.removePoint(60);
     }, 2000);
 }
