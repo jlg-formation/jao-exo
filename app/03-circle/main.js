@@ -27,8 +27,17 @@ class Circle {
         point.setAttribute('fill', '#000');
         point.setAttribute('stroke', '#000');
         point.setAttribute('stroke-width', '2');
+        point.setAttribute('id', `point_${angle}`);
 
         svg.appendChild(point);
+    }
+
+    removePoint(angle) {
+        console.log('removePoint');
+        const toBeRemoved = document.querySelector(`#point_${angle}`);
+        if (toBeRemoved) {
+            toBeRemoved.outerHTML = '';
+        }
     }
 
     setLine(angle1, angle2) {
@@ -56,6 +65,9 @@ function main() {
     c.setPoint(90);
     c.setPoint(270);
     c.setLine(30, 90);
+    setTimeout(() => {
+        c.removePoint(60);
+    }, 2000);
 }
 
 main();
