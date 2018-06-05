@@ -31,13 +31,16 @@ class Circle {
     }
 
     setLine(angle1, angle2) {
+        const a1 = - angle1 * 2 * Math.PI / 360;
+        const a2 = - angle2 * 2 * Math.PI / 360;
+
         const svgns = "http://www.w3.org/2000/svg";
         const svg = document.querySelector('svg');
         const line = document.createElementNS(svgns, 'line');
-        line.setAttribute('x1', 10);
-        line.setAttribute('y1', 20);
-        line.setAttribute('x2', 50);
-        line.setAttribute('y2', 100);
+        line.setAttribute('x1', this.cx + this.radius * Math.cos(a1));
+        line.setAttribute('y1', this.cy + this.radius * Math.sin(a1));
+        line.setAttribute('x2', this.cx + this.radius * Math.cos(a2));
+        line.setAttribute('y2', this.cy + this.radius * Math.sin(a2));
         line.setAttribute('stroke', '#000');
         line.setAttribute('stroke-width', '2');
 
